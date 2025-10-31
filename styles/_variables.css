@@ -1,0 +1,52 @@
+/* srcstyles/_variables.css */
+
+:root {
+  /* ======================== */
+  /*      1. COLOR PALETTE    */
+  /* ======================== */
+  --color-bg-primary: #121212;          /* Main dark background */
+  --color-bg-secondary: #1E1E1E;        /* Lighter background for cards */
+  --color-text-primary: #E0E0E0;        /* Main text color */
+  --color-text-muted: #888888;          /* Lighter text for descriptions */
+  --color-accent-primary: #E53E3E;      /* Red for buttons and highlights */
+  --color-accent-success: #48BB78;      /* Green for success states (e.g., copied) */
+  --color-border: #2d2d2d;              /* Subtle border color for cards and elements */
+
+  /* ======================== */
+  /*      2. TYPOGRAPHY       */
+  /* ======================== */
+  /* Font Family */
+  --font-family-main: 'Poppins', sans-serif;
+
+  /* Font Sizes */
+  --font-size-h1-desktop: 80px;
+  --font-size-h1-mobile: 50px;
+  --font-size-h2: 42px;
+  --font-size-body: 18px;
+  --font-size-card-title: 22px;
+  --font-size-button: 16px;
+
+  /* Font Weights */
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  --font-weight-light: 300;
+
+  /* ======================== */
+  /*    3. LAYOUT & SPACING   */
+  /* ======================== */
+  --layout-max-width: 1100px;           /* Max width of the main content container */
+  --spacing-section-vertical: 60px;    /* Space between major sections */
+  --spacing-section-padding-y: 30px;    /* Top/bottom padding within a section */
+  --spacing-header-to-content: 50px;    /* Space between a section's title and its content */
+  --spacing-gap: 30px;                  /* Standard gap for flex/grid layouts */
+  --spacing-gap-sm: 20px;               /* A smaller gap for tighter elements */
+
+  /* ======================== */
+  /* 4. BORDERS & TRANSITIONS */
+  /* ======================== */
+  --border-radius-sm: 8px;              /* For buttons, inputs */
+  --border-radius-md: 16px;             /* For cards */
+  --transition-speed: 0.3s;
+  --transition-timing: ease;
+}

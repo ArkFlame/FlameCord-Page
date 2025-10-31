@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlameCord Incompatibilities & Best Practices - FlameCord Blog</title>
+    <meta name="description" content="Learn about known incompatibilities and best practices for plugins like ViaVersion to ensure a high-performance, stable server experience with FlameCord.">
+    <meta name="author" content="ArkFlame Development">
+    <link rel="icon" href="../assets/images/favicon.ico">
+    <!-- All head links are the same as the previous post -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+    <!-- Reusable Header -->
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="../index.html" class="nav-logo"><img src="https://placehold.co/150x40/transparent/white?text=FlameCord" alt="FlameCord Logo"></a>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Config</a></li>
+                <li><a href="#">Download</a></li>
+            </ul>            <ul class="nav-socials">
+                <li>
+                    <a href="https://discord.gg/gF36AT3" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+                        <img src="../assets/icons/discord.svg" alt="Discord Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/arkflame" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <img src="../assets/icons/twitter.svg" alt="Twitter Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.reddit.com/r/FlameCord/" target="_blank" rel="noopener noreferrer" aria-label="Reddit">
+                        <img src="../assets/icons/reddit.svg" alt="Reddit Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/FlameCordMC/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <img src="../assets/icons/instagram.svg" alt="Instagram Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@flamecordmc" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <img src="../assets/icons/tiktok.svg" alt="TikTok Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@LinsaFTW" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                        <img src="../assets/icons/youtube.svg" alt="YouTube Icon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="section page-section">
+            <article class="container blog-post">
+
+                <!-- The Main Post Banner -->
+                <div class="post-banner" style="background-image: url('/blog/incompatibilities/thumbnail.jpg');">
+                    <h1>Incompatibilities & Best Practices</h1>
+                </div>
+
+                <!-- The Main Post Content -->
+                <div class="post-content">
+                    <h2>Ensuring a Stable and High-Performance Setup</h2>
+                    <p>FlameCord is engineered for peak performance and compatibility. As a BungeeCord fork, it works seamlessly with the vast majority of plugins like BungeeGuard, AuthMeBungee, and various portal plugins. However, achieving a perfectly stable and fast server requires understanding a few key best practices, particularly regarding plugin placement and potential conflicts.</p>
+                    
+                    <h3>The Golden Rule: ViaVersion on Spigot, Not the Proxy</h3>
+                    <p>This is the most critical configuration advice for any proxy server. While it may seem convenient to install ViaVersion (and its related plugins like ViaBackwards) on the proxy, this is a major performance bottleneck.</p>
+                    <ul>
+                        <li><strong>❌ Incorrect Setup:</strong> Do not install ViaVersion on FlameCord (or any BungeeCord proxy). On a standard BungeeCord, this will cause significant server lag as the proxy struggles to translate packets for every single player. On FlameCord, our optimizations mean it won't even work correctly.</li>
+                        <li><strong>✔️ Correct Setup:</strong> You must install ViaVersion directly on your backend Spigot (or Paper, Purpur, etc.) servers. This allows each backend server to handle the packet translation for its own players, which is infinitely more efficient and scalable. This setup works perfectly with FlameCord.</li>
+                    </ul>
+
+                    <h3>Potential Conflicts: Packet-Modifying Plugins</h3>
+                    <p>A small number of plugins heavily modify or listen to packet events on the proxy. In some cases, these deep-level modifications can interfere with FlameCord's performance and security optimizations. This is not a guaranteed incompatibility, but it's the first place to look if you experience unexplained issues.</p>
+                    
+                    <ol>
+                        <li>
+                            <strong>What are Packet Event Plugins?</strong>
+                            These are often complex anti-cheat systems, custom anti-bot solutions (which are redundant with FlameCord), or plugins that introduce unique gameplay mechanics by directly manipulating Minecraft's data packets.
+                        </li>
+                        <li>
+                            <strong>Symptoms of a Conflict:</strong>
+                            If you experience strange connection issues, rubber-banding, or specific features not working, a packet-level plugin conflict is a likely cause.
+                        </li>
+                    </ol>
+
+                    <h2>Troubleshooting Steps</h2>
+                    <p>If you encounter unexpected behavior, follow this diagnostic process:</p>
+                    <ol>
+                        <li>
+                            <strong>Check ViaVersion:</strong>
+                            First and foremost, confirm that ViaVersion and its addons are NOT in your proxy's `plugins` folder. They should only be on the backend servers.
+                        </li>
+                        <li>
+                            <strong>Isolate Packet-Event Plugins:</strong>
+                            Temporarily remove any plugins that you suspect might be heavily modifying packets (e.g., complex anti-cheats). Restart the server and see if the issue is resolved. If it is, you've found the conflict.
+                        </li>
+                        <li>
+                            <strong>Seek Updates:</strong>
+                            Ensure all of your plugins are fully up to date. A conflict you're experiencing may be a known bug that has already been fixed by the plugin author.
+                        </li>
+                        <li>
+                            <strong>Join Our Discord for Support:</strong>
+                            If you've followed these steps and are still facing issues, our support team on Discord is available to help you pinpoint the problem.
+                        </li>
+                    </ol>
+                    
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Reusable Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">&copy; <span id="current-year"></span> FlameCord by <a href="https://github.com/arkflame/">ArkFlame Development</a></p>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js" type="module"></script>
+</body>
+</html>

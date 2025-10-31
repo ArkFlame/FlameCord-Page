@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration Guide - FlameCord</title>
+    <meta name="description" content="The official and complete configuration guide for all settings in FlameCord, including AntiBot, Custom MOTD, and more.">
+    <meta name="author" content="ArkFlame Development">
+    <link rel="icon" href="../assets/images/favicon.ico">
+    <!-- All head links are the same as blog.html -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+    <!-- Reusable Header -->
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="#" class="nav-logo">
+                <img src="assets/images/favicon.ico" alt="FlameCord Logo">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/config.html">Config</a></li>
+                <li><a href="https://builtbybit.com/resources/flamecord-ultimate-anti-bot-solution.13492/">Download</a>
+                </li>
+            </ul>            <ul class="nav-socials">
+                <li>
+                    <a href="https://discord.gg/gF36AT3" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+                        <img src="../assets/icons/discord.svg" alt="Discord Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/arkflame" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <img src="../assets/icons/twitter.svg" alt="Twitter Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.reddit.com/r/FlameCord/" target="_blank" rel="noopener noreferrer" aria-label="Reddit">
+                        <img src="../assets/icons/reddit.svg" alt="Reddit Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/FlameCordMC/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <img src="../assets/icons/instagram.svg" alt="Instagram Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@flamecordmc" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <img src="../assets/icons/tiktok.svg" alt="TikTok Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@LinsaFTW" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                        <img src="../assets/icons/youtube.svg" alt="YouTube Icon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="section page-section" id="config-page">
+            <div class="container">
+                <article class="config-guide">
+                    <header class="config-header">
+                        <h1>Configuration guide for FlameCord</h1>
+                        <p>The official complete configuration guide for your Minecraft server using FlameCord.</p>
+                    </header>
+
+                    <section class="config-section">
+                        <h2>Logger</h2>
+                        <p>Settings for logging various server activities.</p>
+                        <ul class="config-options">
+                            <li><code>initialhandler:</code> If false, disables logging of initial connection handling.</li>
+                            <li><code>exceptions:</code> If false, disables logging of exception traces. Recommended to keep false unless debugging.</li>
+                            <li><code>dump:</code> If false, disables memory dump logging.</li>
+                            <li><code>detailed-connect-errors:</code> If true, provides detailed errors during connection issues.</li>
+                        </ul>
+                    </section>
+
+                    <section class="config-section">
+                        <h2>Custom MOTD</h2>
+                        <p>Customize the Message of the Day, player count, and server protocol shown in the server list.</p>
+                        <ul class="config-options">
+                            <li><code>motd.enabled:</code> If true, enables the custom MOTD feature.</li>
+                            <li><code>sample.enabled:</code> If true, enables custom sample messages on player list hover.</li>
+                            <li><code>protocol.enabled:</code> If true, shows a custom protocol name (e.g., "Maintenance").</li>
+                            <li><code>maxplayers.enabled:</code> If true, fakes the maximum player count.</li>
+                            <li><code>fakeplayers.enabled:</code> If true, adds a fake number of players to the online count.</li>
+                        </ul>
+                    </section>
+
+                    <section class="config-section">
+                        <h2>AntiBot</h2>
+                        <p>The core of FlameCord's protection. A multi-layered defense system to mitigate bot attacks.</p>
+                        
+                        <h3>Latency</h3>
+                        <p>Blocks connections with unusually high latency (ping).</p>
+                        <ul class="config-options">
+                            <li><code>enabled:</code> If true, activates the high-latency check.</li>
+                            <li><code>firewall:</code> If true, automatically firewalls IPs that fail this check.</li>
+                            <li><code>limit:</code> The maximum allowed latency in milliseconds (e.g., 900ms).</li>
+                        </ul>
+
+                        <h3>Accounts</h3>
+                        <p>Limits the number of accounts that can join from a single IP address.</p>
+                        <ul class="config-options">
+                            <li><code>enabled:</code> If true, limits accounts per IP.</li>
+                            <li><code>limit:</code> The maximum number of accounts allowed per IP (e.g., 3).</li>
+                        </ul>
+
+                        <h3>Country</h3>
+                        <p>Blocks or allows connections based on their country of origin.</p>
+                        <ul class="config-options">
+                            <li><code>enabled:</code> If true, enables country filtering.</li>
+                            <li><code>blacklist:</code> A list of country codes (e.g., "CN", "RU") to block.</li>
+                        </ul>
+
+                        <h3>FastChat</h3>
+                        <p>Prevents players from spamming chat messages too quickly.</p>
+                        <ul class="config-options">
+                            <li><code>enabled:</code> If true, enables the fast chat check.</li>
+                            <li><code>time:</code> The minimum time in milliseconds between messages (e.g., 1000ms).</li>
+                        </ul>
+
+                        <h3>Firewall</h3>
+                        <p>Manages the automatic firewalling of malicious IPs.</p>
+                        <ul class="config-options">
+                            <li><code>enabled:</code> If true, activates the firewall system.</li>
+                            <li><code>time:</code> The duration in minutes that an IP remains firewalled (e.g., 60).</li>
+                            <li><code>ipset:</code> If true, uses the high-performance IPset on Linux (requires root).</li>
+                        </ul>
+
+                        <h3>Nickname</h3>
+                        <p>Blocks players with usernames matching known bot patterns.</p>
+                        <ul class="config-options">
+                            <li><code>enabled:</code> If true, enables the nickname check.</li>
+                            <li><code>blacklist:</code> A list of names or patterns to block (e.g., "mcstorm").</li>
+                        </ul>
+
+                        <h3>Password</h3>
+                        <p>Prevents multiple accounts from using the same password to log in.</p>
+                        <ul class="config-options">
+                            <li><code>enabled:</code> If true, enables the repeated password check.</li>
+                            <li><code>limit:</code> The maximum number of accounts that can use the same password.</li>
+                            <li><code>login-commands:</code> A list of your server's login/register commands.</li>
+                        </ul>
+
+                        <h3>RateLimit</h3>
+                        <p>Limits the number of new connections and pings per second from an IP.</p>
+                        <ul class="config-options">
+                            <li><code>enabled:</code> If true, activates the rate limit.</li>
+                            <li><code>connections-per-second:</code> Max new connections per second from one IP.</li>
+                            <li><code>pings-per-second:</code> Max pings per second from one IP.</li>
+                        </ul>
+
+                        <h3>Reconnect</h3>
+                        <p>Asks suspicious new players to reconnect, a powerful filter against advanced bots.</p>
+                        <ul class="config-options">
+                            <li><code>enabled:</code> If true, enables the reconnect check.</li>
+                            <li><code>connections-trigger:</code> Amount of connections per second to activate this check.</li>
+                        </ul>
+
+                        <h3>Proxy Check</h3>
+                        <p>Validates IPs against public lists of known proxies, VPNs, and malicious addresses.</p>
+                        <ul class="config-options">
+                            <li><code>enabled:</code> If true, enables the proxy check.</li>
+                            <li><code>online-check:</code> If true, uses external APIs for real-time checks (requires email).</li>
+                            <li><code>lists:</code> The list of blocklist URLs to use.</li>
+                        </ul>
+                        
+                        <h3>Lockdown</h3>
+                        <p>A manual or automatic mode to temporarily block all new connections during a severe attack.</p>
+                        <ul class="config-options">
+                            <li><code>enabled:</code> If true, the lockdown module is active.</li>
+                            <li><code>period-limit:</code> The number of connections per period to automatically trigger a lockdown.</li>
+                        </ul>
+
+                        <h3>Limbo</h3>
+                        <p>Redirects suspicious connections to an isolated "limbo" world for further verification (e.g., CAPTCHA).</p>
+                        <ul class="config-options">
+                            <li><code>enabled:</code> If true, enables the limbo system.</li>
+                            <li><code>trigger.connections:</code> Number of connections within the period to activate limbo.</li>
+                        </ul>
+
+                        <h3>Packets</h3>
+                        <p>Monitors player packets to prevent server overload from packet abuse.</p>
+                        <ul class="config-options">
+                            <li><code>enabled:</code> If true, activates the packet check system.</li>
+                            <li><code>vls-to-kick:</code> The violation level threshold at which a player is kicked.</li>
+                        </ul>
+
+                    </section>
+
+                    <section class="config-section">
+                        <h2>Balancer</h2>
+                        <p>Distributes player connections evenly across multiple lobby servers.</p>
+                        <ul class="config-options">
+                            <li><code>enabled:</code> If true, activates the balancer.</li>
+                            <li><code>on-join:</code> If true, balances players automatically when they first join.</li>
+                            <li><code>fallback:</code> If true, sends players to a lobby if their current server goes down.</li>
+                            <li><code>servers:</code> The list of servers to include in the balancing pool (e.g., "lobby1", "lobby2").</li>
+                        </ul>
+                    </section>
+
+                    <section class="config-section">
+                        <h2>Maintenance Mode</h2>
+                        <p>Allows you to close the server to the public while allowing whitelisted staff to join.</p>
+                        <ul class="config-options">
+                            <li><code>enabled:</code> If true, activates maintenance mode.</li>
+                            <li><code>whitelist:</code> A list of player names allowed to join during maintenance.</li>
+                        </ul>
+                    </section>
+
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Reusable Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">&copy; <span id="current-year"></span> FlameCord by <a href="https://github.com/arkflame/">ArkFlame Development</a></p>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,426 @@
+.btn {
+  display: inline-block; padding: 14px 32px; border-radius: var(--border-radius-sm);
+  font-family: var(--font-family-main); font-size: var(--font-size-button); font-weight: var(--font-weight-medium);
+  text-transform: uppercase; border: 2px solid transparent; cursor: pointer;
+  transition: all var(--transition-speed) var(--transition-timing); letter-spacing: 1px;
+}
+.btn-primary { background-color: var(--color-accent-primary); color: white; }
+.btn-primary:hover { opacity: 0.9; transform: translateY(-3px); box-shadow: 0 4px 15px rgba(229, 62, 62, 0.4); }
+.btn-secondary { background-color: transparent; color: white; border-color: var(--color-border); }
+.btn-secondary:hover { background-color: white; color: var(--color-bg-primary); border-color: white; transform: translateY(-3px); }
+
+#typewriter-cursor { animation: blink 0.7s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.discount-wrapper { display: flex; gap: 10px; align-items: center; background-color: var(--color-bg-secondary); padding: 10px 20px; border-radius: var(--border-radius-sm); border: 1px solid var(--color-border); }
+.discount-input { background: none; border: none; color: var(--color-text-primary); font-size: 18px; text-align: center; width: 200px; }
+.copy-icon-btn { font-size: 20px; color: var(--color-text-muted); cursor: pointer; }
+.copy-icon-btn.copied { color: var(--color-accent-success); }
+.scroll-down-btn { font-size: 30px; width: 65px; height: 65px; border-radius: 50%; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; color: var(--color-text-muted); }
+
+.feature-card {
+  background-color: var(--color-bg-secondary); padding: var(--spacing-gap); border-radius: var(--border-radius-md); text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--spacing-gap-sm); border: 1px solid var(--color-border);
+}
+.feature-card .icon { width: 64px; height: 64px; }
+.feature-card .title { font-size: var(--font-size-card-title); font-weight: var(--font-weight-medium); }
+
+.review-card {
+  background-color: var(--color-bg-secondary); padding: var(--spacing-gap); border-radius: var(--border-radius-md); border: 1px solid var(--color-border); width: 380px; flex-shrink: 0; display: flex; flex-direction: column; gap: 15px; text-align: left;
+}
+.review-header { display: flex; align-items: center; gap: 15px; }
+.review-avatar { width: 50px; height: 50px; border-radius: 50%; }
+.review-author { font-weight: var(--font-weight-medium); }
+.review-stars { color: #f0c419; }
+.review-text { color: var(--color-text-muted); font-size: 16px; }
+
+.article-card { background-color: var(--color-bg-secondary); border-radius: var(--border-radius-md); overflow: hidden; border: 1px solid var(--color-border); }
+.article-card img { width: 100%; height: 180px; object-fit: cover; }
+.article-content { padding: 20px; }
+.article-content h4 { font-size: 18px; margin-bottom: 10px; }
+
+/* ======================== */
+/*      FEATURE CARD        */
+/* ======================== */
+.feature-card {
+  /* --- Card Structure & Appearance --- */
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 40px 30px; /* Generous vertical padding */
+
+  /* --- Internal Alignment (The Main Fix) --- */
+  display: flex;
+  flex-direction: column;   /* Stack items vertically */
+  align-items: center;      /* Center items horizontally */
+  text-align: center;       /* Ensure text is centered */
+  gap: 20px;                /* Consistent spacing between icon, title, and text */
+}
+
+.feature-card .icon {
+  width: 64px;
+  height: 64px;
+  display: block; /* Ensures proper rendering */
+}
+
+.feature-card .title {
+  font-size: var(--font-size-card-title);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  /* The gap property handles the margin, so no extra margin is needed */
+}
+
+.feature-card .description {
+  color: var(--color-text-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ======================== */
+/*      ANTIBOT CARD        */
+/* ======================== */
+.antibot-card {
+  background-color: var(--color-bg-secondary);
+  padding: 25px;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.antibot-card h4 {
+  font-size: 18px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.antibot-card p {
+    font-size: 16px;
+    color: var(--color-text-muted);
+}
+
+.antibot-card h4 {
+  /* Aligns the icon and text vertically */
+  display: flex;
+  align-items: center;
+}
+
+.feature-icon {
+  /* Adjust size as needed */
+  width: 24px;
+  height: 24px;
+  
+  /* Adds space between the icon and the title text */
+  margin-right: 10px; 
+}
+
+
+/* ================================================== */
+/*   DEFINITIVE STYLES FOR THE DEDICATED BLOG PAGE    */
+/*         (These will not affect the homepage)       */
+/* ================================================== */
+
+/* Style the blog page's unique, lightweight header */
+#blog-page .section-header h2 {
+    font-weight: var(--font-weight-light);
+    color: var(--color-text-muted);
+}
+
+/* --- The Main Card Style --- */
+#blog-page .article-card {
+    /* --- Card Structure & Appearance --- */
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--border-radius-md); /* This rounds the corners */
+    overflow: hidden; /* CRITICAL: This forces the image to obey the rounded corners */
+    border: 1px solid var(--color-border);
+    text-decoration: none; /* Removes underline from the link */
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+/* Add a subtle hover effect to the entire card */
+#blog-page .article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* --- THE IMAGE FIX: Cropping and Sizing --- */
+#blog-page .article-card img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9; /* This enforces a consistent 16:9 widescreen aspect ratio */
+    object-fit: cover; /* This is the magic property that crops the image to fit without distortion */
+}
+
+/* --- The Text Content Area --- */
+#blog-page .article-card .article-content {
+    padding: 30px 25px; /* Generous padding for a clean look */
+    text-align: center; /* THIS CENTERS THE TEXT */
+}
+
+/* --- The Article Title --- */
+#blog-page .article-card .article-content h4 {
+    font-size: 20px;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    line-height: 1.4;
+}
+
+/* A wrapper for the entire article content */
+.blog-post {
+    /* This centers the content column on the page */
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+/* --- The Main Post Banner --- */
+.post-banner {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    border-radius: var(--border-radius-md);
+    overflow: hidden; /* Ensures the image respects the border-radius */
+    
+    /* Flexbox for perfect text centering */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Background image setup */
+    background-size: cover;
+    background-position: center;
+}
+
+/* A dark overlay on the banner to make text readable */
+.post-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* The title overlaid on the banner */
+.post-banner h1 {
+    position: relative; /* Sits on top of the overlay */
+    z-index: 2;
+    color: white;
+    font-size: 48px;
+    text-align: center;
+    padding: 0 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* --- The Main Post Content Area --- */
+.post-content {
+    padding-top: 40px; /* Space between banner and content */
+    text-align: left; /* Default text to left-aligned for readability */
+}
+
+/* The main title below the banner */
+.post-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--color-text-primary);
+}
+
+/* Standard paragraphs in the article */
+.post-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: 25px;
+}
+
+/* Styling for numbered lists */
+.post-content ol {
+    list-style: none; /* We'll use a custom counter */
+    counter-reset: post-counter;
+    padding-left: 0;
+}
+
+.post-content ol li {
+    counter-increment: post-counter;
+    margin-bottom: 30px;
+    padding-left: 45px;
+    position: relative;
+}
+
+/* Create a fancy, styled number for the list */
+.post-content ol li::before {
+    content: counter(post-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-accent-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-weight-bold);
+    font-size: 16px;
+}
+
+/* Make the feature name bold and bright */
+.post-content ol li strong {
+    display: block;
+    font-size: 18px;
+    color: var(--color-text-primary);
+    margin-bottom: 5px;
+}
+
+/* A container for the list of Q&A cards */
+#faq-page .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* The space between each card */
+    width: 100%;
+    max-width: 900px; /* Keeps the layout from becoming too wide */
+}
+
+/* --- The individual Q&A card style --- */
+#faq-page .faq-item {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    padding: 30px;
+    text-align: left;
+}
+
+/* --- The Question Style --- */
+#faq-page .faq-question {
+    font-size: 20px;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    margin-bottom: 15px; /* Space between question and answer */
+}
+
+/* Add the "Q:" prefix with the accent color */
+#faq-page .faq-question::before {
+    content: 'Q: ';
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+}
+
+/* --- The Answer Style --- */
+#faq-page .faq-answer {
+    font-size: 16px;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+/* Style for any links within an answer */
+#faq-page .faq-answer a {
+    color: var(--color-accent-primary);
+    text-decoration: underline;
+    font-weight: var(--font-weight-medium);
+}
+
+#faq-page .container {
+    /* 1. Enable Flexbox */
+    display: flex;
+    /* 2. Stack items vertically */
+    flex-direction: column;
+    /* 3. THIS IS THE FIX: Center all items (the header and the faq-list) horizontally */
+    align-items: center;
+}
+
+/* A wrapper for the entire configuration guide content */
+#config-page .config-guide {
+    max-width: 900px; /* Constrain the width for readability */
+    text-align: left; /* Default all text to left-aligned */
+}
+
+/* --- The Main Page Header --- */
+#config-page .config-header {
+    margin-bottom: 60px; /* Large space after the main title */
+}
+
+#config-page .config-header h1 {
+    font-size: 48px;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin-bottom: 15px;
+}
+
+#config-page .config-header p {
+    font-size: 20px;
+    color: var(--color-text-muted);
+}
+
+/* --- Individual Config Sections --- */
+#config-page .config-section {
+    margin-bottom: 50px;
+}
+
+#config-page .config-section h2,
+#config-page .config-section h3 {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+#config-page .config-section h2 { font-size: 32px; }
+#config-page .config-section h3 { font-size: 24px; margin-top: 30px;}
+
+#config-page .config-section > p {
+    font-size: 16px;
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+}
+
+/* --- The list of config options --- */
+#config-page .config-options {
+    list-style: none;
+    padding-left: 10px;
+}
+
+#config-page .config-options li {
+    font-size: 16px;
+    color: var(--color-text-muted);
+    padding: 10px 0;
+}
+
+/* Style for the config key (e.g., 'enabled:') */
+#config-page .config-options code {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: var(--color-accent-primary);
+}
+
+#config-page .container {
+    /* 1. Enable Flexbox */
+    display: flex;
+    /* 2. Stack items vertically */
+    flex-direction: column;
+    /* 3. THIS IS THE FIX: Center all items (in this case, the .config-guide article) horizontally */
+    align-items: center;
+}
+.btn-veloflame {
+    /* 1. The Gradient Background */
+    /* A nice diagonal gradient from a vibrant blue to a deep indigo */
+    background-image: linear-gradient(to right top, #36A2EB, #4F46E5);
+    
+    /* 2. Text and Border */
+    color: white; /* Ensures text is bright and readable */
+    border: none; /* A gradient button looks best with no border */
+    
+    /* 3. Prepare for Hover Animation */
+    transition: all var(--transition-speed) var(--transition-timing);
+}
+
+/* --- The "Fancy" Hover Effect --- */
+.btn-veloflame:hover {
+    /* 1. Lift the button up slightly */
+    transform: translateY(-3px);
+    
+    /* 2. Add a soft, glowing blue shadow */
+    box-shadow: 0 6px 20px rgba(54, 162, 235, 0.4);
+}

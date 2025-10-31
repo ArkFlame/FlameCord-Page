@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Install FlameCord - FlameCord Blog</title>
+    <meta name="description" content="A step-by-step guide to installing and setting up FlameCord on your server network for enhanced performance and security.">
+    <meta name="author" content="ArkFlame Development">
+    <link rel="icon" href="../assets/images/favicon.ico">
+    <!-- All head links are the same as the previous post -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+    <!-- Reusable Header -->
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="../index.html" class="nav-logo"><img src="https://placehold.co/150x40/transparent/white?text=FlameCord" alt="FlameCord Logo"></a>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Config</a></li>
+                <li><a href="#">Download</a></li>
+            </ul>            <ul class="nav-socials">
+                <li>
+                    <a href="https://discord.gg/gF36AT3" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+                        <img src="../assets/icons/discord.svg" alt="Discord Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/arkflame" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <img src="../assets/icons/twitter.svg" alt="Twitter Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.reddit.com/r/FlameCord/" target="_blank" rel="noopener noreferrer" aria-label="Reddit">
+                        <img src="../assets/icons/reddit.svg" alt="Reddit Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/FlameCordMC/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <img src="../assets/icons/instagram.svg" alt="Instagram Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@flamecordmc" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <img src="../assets/icons/tiktok.svg" alt="TikTok Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@LinsaFTW" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                        <img src="../assets/icons/youtube.svg" alt="YouTube Icon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="section page-section">
+            <article class="container blog-post">
+
+                <!-- The Main Post Banner -->
+                <div class="post-banner" style="background-image: url('/blog/how-to-install/thumbnail.jpg');">
+                    <h1>How to Install FlameCord</h1>
+                </div>
+
+                <!-- The Main Post Content -->
+                <div class="post-content">
+                    <h2>Getting Started From Scratch</h2>
+                    <p>Installing FlameCord is a straightforward process. As a drop-in replacement for BungeeCord, it uses the same structure and configuration that you may already be familiar with. This guide will walk you through setting up a new FlameCord proxy from start to finish.</p>
+                    
+                    <h3>Prerequisites</h3>
+                    <p>Before you begin, ensure you have the following:</p>
+                    <ul>
+                        <li>A server or machine to host the proxy (VPS, dedicated, or home machine).</li>
+                        <li>Java 8 or newer installed on that machine.</li>
+                        <li>At least one backend Minecraft server (Spigot, Paper, etc.) that players will connect to.</li>
+                    </ul>
+
+                    <h3>Step-by-Step Installation Guide</h3>
+                    <ol>
+                        <li>
+                            <strong>Download FlameCord:</strong>
+                            First, purchase and download the latest version of FlameCord from our official <a href="https://builtbybit.com/resources/flamecord-ultimate-anti-bot-solution.13492/" target="_blank">BuiltByBit page</a>. You will receive a `.jar` file.
+                        </li>
+                        <li>
+                            <strong>Create a Dedicated Folder:</strong>
+                            On your server, create a new folder specifically for your FlameCord proxy. For example, you could name it `flamecord-proxy`. This keeps your files organized.
+                        </li>
+                        <li>
+                            <strong>Upload the JAR File:</strong>
+                            Upload the `FlameCord.jar` file you downloaded into the new folder you just created.
+                        </li>
+                        <li>
+                            <strong>Create a Startup Script:</strong>
+                            To run the proxy, you need a startup script. Create a new file in your proxy folder. If you are on Linux, name it `start.sh`. If you are on Windows, name it `start.bat`.
+                        </li>
+                        <li>
+                            <strong>Edit the Startup Script:</strong>
+                            Open the script and add the following command. This command tells Java to run FlameCord with an initial 512MB of RAM. You can adjust this value if needed, but a proxy typically does not require much RAM.
+                            <br><br>
+                            <code>java -Xms512M -Xmx512M -jar FlameCord.jar</code>
+                        </li>
+                        <li>
+                            <strong>Run the Script:</strong>
+                            Execute the script to start FlameCord for the first time. On Linux, run `bash start.sh`. On Windows, double-click `start.bat`. FlameCord will generate all its necessary configuration files and then shut down.
+                        </li>
+                        <li>
+                            <strong>Configure Your Servers:</strong>
+                            Open the `config.yml` file that was just generated. The most important section is `servers`. Here, you will list all of your backend servers (like your Lobby, Survival, etc.). Add each server with its IP address and port.
+                        </li>
+                         <li>
+                            <strong>Final Start:</strong>
+                            Run the `start.sh` or `start.bat` script again. Your FlameCord proxy is now live and ready to accept player connections!
+                        </li>
+                    </ol>
+
+                    <h2>Next Steps</h2>
+                    <p>Your proxy is now running, but the journey doesn't end here. We highly recommend diving into the `flamecord.yml` and `modules.yml` files to customize the powerful anti-bot and security features to best suit your server's needs. If you have any questions during the setup process, don't hesitate to join our <a href="https://discord.gg/gF36AT3" target="_blank">official Discord server</a> for support.</p>
+                </div>
+
+            </article>
+        </section>
+    </main>
+
+    <!-- Reusable Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">&copy; <span id="current-year"></span> FlameCord by <a href="https://github.com/arkflame/">ArkFlame Development</a></p>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js" type="module"></script>
+</body>
+</html>

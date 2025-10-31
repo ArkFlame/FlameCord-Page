@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO & Metadata -->
+    <title>FlameCord - Enhance Your Minecraft Server Performance</title>
+    <meta name="description"
+        content="Optimize your Minecraft server with FlameCord's advanced security, top performance, and seamless compatibility. Elevate your gaming experience today!">
+    <meta name="author" content="ArkFlame Development">
+    <link rel="icon" href="assets/images/favicon.ico"> <!-- Make sure you have this asset -->
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+    <!-- ======================== -->
+    <!--          HEADER          -->
+    <!-- ======================== -->
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="#" class="nav-logo">
+                <img src="assets/images/favicon.ico" alt="FlameCord Logo">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/config.html">Config</a></li>
+                <li><a href="https://builtbybit.com/resources/flamecord-ultimate-anti-bot-solution.13492/">Download</a>
+                </li>
+            </ul>
+            <ul class="nav-socials">
+                <li>
+                    <a href="https://discord.gg/gF36AT3" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+                        <img src="../assets/icons/discord.svg" alt="Discord Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/arkflame" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <img src="../assets/icons/twitter.svg" alt="Twitter Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.reddit.com/r/FlameCord/" target="_blank" rel="noopener noreferrer" aria-label="Reddit">
+                        <img src="../assets/icons/reddit.svg" alt="Reddit Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/FlameCordMC/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <img src="../assets/icons/instagram.svg" alt="Instagram Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@flamecordmc" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <img src="../assets/icons/tiktok.svg" alt="TikTok Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@LinsaFTW" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                        <img src="../assets/icons/youtube.svg" alt="YouTube Icon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- ======================== -->
+        <!--           HERO           -->
+        <!-- ======================== -->
+        <section class="hero-section" style="background-image: url('assets/images/bg.webp');">
+            <!-- Make sure you have this asset -->
+            <div class="hero-content container">
+                <h1>FlameCord</h1>
+                <h2 class="hero-subtitle"
+                    style="font-size: 1.5rem; letter-spacing: 5px; color: var(--color-text-primary);">
+                    <span style="text-decoration: line-through; color: #F56565;">Possibly</span> The most <span
+                        id="typewriter"></span><span id="typewriter-cursor">|</span> BungeeCord Fork
+                </h2>
+                <div class="hero-buttons">
+                    <a href="https://builtbybit.com/resources/flamecord-ultimate-anti-bot-solution.13492/" class="btn btn-primary">Download now</a>
+                    <a href="https://veloflame.com" class="btn btn-veloflame" target="_blank" rel="noopener noreferrer">Get VeloFlame</a>
+                    <a href="#features" class="btn btn-secondary">Learn more</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================== -->
+        <!--         DISCOUNT         -->
+        <!-- ======================== -->
+        <section class="section" id="discount-section">
+            <div class="container"
+                style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-gap);">
+                <p style="font-size: 25px; color: var(--color-text-primary);">Get 10% off with the code:</p>
+                <div class="discount-wrapper">
+                    <input type="text" class="discount-input" value="152552-WEB" readonly id="discount-code">
+                    <button class="copy-icon-btn" id="copy-btn" aria-label="Copy Code">📋</button>
+                </div>
+                <a href="#features" class="scroll-down-btn" aria-label="Scroll down">↓</a>
+            </div>
+        </section>
+
+        <!-- ======================== -->
+        <!--         FEATURES         -->
+        <!-- ======================== -->
+        <section class="section" id="features">
+            <div class="container">
+                <h2>Features</h2>
+                <p>FlameCord features are focused on the security of your Minecraft server preventing hacking with crash
+                    exploits, bots and other kind of ddos attacks on the application layer.</p>
+                <div class="features-grid">
+                    <div class="feature-card"><img src="assets/images/features/bot.png" alt="Bot Icon" class="icon">
+                        <h3 class="title">Bots</h3>
+                        <p class="description">We prevent bots using multiple security checks to minimize the damage.
+                        </p>
+                    </div>
+                    <div class="feature-card"><img src="assets/images/features/firewall.png" alt="Firewall Icon"
+                            class="icon">
+                        <h3 class="title">Firewall</h3>
+                        <p class="description">We use IPTables on detected exploit/bots to prevent further damage.</p>
+                    </div>
+                    <div class="feature-card"><img src="assets/images/features/feather.png" alt="Performance Icon"
+                            class="icon">
+                        <h3 class="title">Performance</h3>
+                        <p class="description">We reduce the amount of processing done to improve the speed of our
+                            servers.</p>
+                    </div>
+                    <div class="feature-card"><img src="assets/images/features/geyser.png" alt="Geyser Icon"
+                            class="icon">
+                        <h3 class="title">Geyser</h3>
+                        <p class="description">Our anti-bot have specific bypasses for Bedrock players.</p>
+                    </div>
+                    <div class="feature-card"><img src="assets/images/features/version.png" alt="ViaVersion Icon"
+                            class="icon">
+                        <h3 class="title">ViaVersion</h3>
+                        <p class="description">FlameCord supports ViaVersion as long as it's installed in all the
+                            backend servers running.</p>
+                    </div>
+                    <div class="feature-card"><img src="assets/images/features/community.png" alt="Community Icon"
+                            class="icon">
+                        <h3 class="title">Community</h3>
+                        <p class="description">We have a large community of developers and server owners that help us to
+                            improve our software.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================== -->
+        <!--          REVIEWS         -->
+        <!-- ======================== -->
+        <section class="section" id="reviews">
+            <div class="container">
+                <h2>More than 100 reviews</h2>
+                <p>FlameCord has more than 9,000 downloads, 2,000 purchases and more than 100 reviews from our
+                    customers.</p>
+            </div>
+            <div class="reviews-scroller">
+                <div class="reviews-track" id="reviews-track">
+                    <div class="review-card">
+                        <div class="review-header"><img src="assets/images/reviews/user.png" alt="User Avatar"
+                                class="review-avatar">
+                            <div>
+                                <h4 class="review-author">Eagle Studios</h4>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">This is the best BungeeCord fork I’ve ever used. It’s stable, has all the
+                            features you need, and I’ve never had any problems with it.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header"><img src="assets/images/reviews/user.png" alt="User Avatar"
+                                class="review-avatar">
+                            <div>
+                                <h4 class="review-author">Kalle001</h4>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">Many players experienced high ping with normal Bungeecord... since I
+                            started using Flamecord, this issue has been resolved.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header"><img src="assets/images/reviews/user.png" alt="User Avatar"
+                                class="review-avatar">
+                            <div>
+                                <h4 class="review-author">koirdsuzu</h4>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">購入して数日経ちましたが、とても優秀なものです！ configがしっかりしていてサポートがしっかりしていてとてもありがたいです！</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header"><img src="assets/images/reviews/user.png" alt="User Avatar"
+                                class="review-avatar">
+                            <div>
+                                <h4 class="review-author">xmankiko214</h4>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">After year I try this fork again and I can see that it is much better
+                            than before. Nice work!</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header"><img src="assets/images/reviews/user.png" alt="User Avatar"
+                                class="review-avatar">
+                            <div>
+                                <h4 class="review-author">draexo</h4>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">I have been using FlameCoard for years. It is great. Dev is very active
+                            and always thinking of new features to add!</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header"><img src="assets/images/reviews/user.png" alt="User Avatar"
+                                class="review-avatar">
+                            <div>
+                                <h4 class="review-author">Senoia</h4>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">I would like to thank you for the very active support that you provide on
+                            your Discord server. FlameCord's reassuring, very good and worth the price.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header"><img src="assets/images/reviews/user.png" alt="User Avatar"
+                                class="review-avatar">
+                            <div>
+                                <h4 class="review-author">LunarEra</h4>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">FlameCord是一个极棒的BungeeCord分支，我已经使用了这个分支两年多了，感谢LinsaFTW的开发！</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header"><img src="assets/images/reviews/user.png" alt="User Avatar"
+                                class="review-avatar">
+                            <div>
+                                <h4 class="review-author">_Der_Wold_</h4>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">I'm confident that FlameCord is the best BungeeCord fork. The support is
+                            very fast and polite. I have no regrets about purchasing FlameCord at all.</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header"><img src="assets/images/reviews/user.png" alt="User Avatar"
+                                class="review-avatar">
+                            <div>
+                                <h4 class="review-author">XzDev</h4>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">GOD el mejor plugin que hay para el proxy</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header"><img src="assets/images/reviews/user.png" alt="User Avatar"
+                                class="review-avatar">
+                            <div>
+                                <h4 class="review-author">zabloinh</h4>
+                                <div class="review-stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">Perfect solution for large scale servers or networks. Would definitely
+                            recommend</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================== -->
+        <!--        BENCHMARK         -->
+        <!-- ======================== -->
+        <section class="section" id="benchmark">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Benchmark</h2>
+                    <p>Compared to other BungeeCord forks, FlameCord is the fastest and most efficient.</p>
+                </div>
+
+                <!-- This new container will hold our charts -->
+                <div class="benchmark-container">
+                    <div class="chart-wrapper">
+                        <canvas id="cpu-chart"></canvas>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="ram-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================== -->
+        <!--     ANTIBOT FEATURES     -->
+        <!-- ======================== -->
+        <section class="section" id="antibot">
+            <div class="container">
+                <h2>AntiBot Features</h2>
+                <p>FlameCord has a powerful antibot system that prevents bots from joining your server.</p>
+                <div class="antibot-grid">
+                    <div class="antibot-card">
+                        <h4><img src="assets/icons/checkmark.svg" alt="Checkmark icon" class="feature-icon">IPTables
+                            Integration</h4>
+                        <p>Integrate with IPTables to ensure high performance DDoS attack prevention.</p>
+                    </div>
+                    <div class="antibot-card">
+                        <h4><img src="assets/icons/checkmark.svg" alt="Checkmark icon" class="feature-icon">Account
+                            Firewall</h4>
+                        <p>Detect and prevent malicious accounts from accessing your server.</p>
+                    </div>
+                    <div class="antibot-card">
+                        <h4><img src="assets/icons/checkmark.svg" alt="Checkmark icon" class="feature-icon">Country
+                            Filtering</h4>
+                        <p>Block or allow players based on specific countries, bolstering security.</p>
+                    </div>
+                    <div class="antibot-card">
+                        <h4><img src="assets/icons/checkmark.svg" alt="Checkmark icon" class="feature-icon">FastChat
+                            Control</h4>
+                        <p>Regulate rapid chat messages to curb spam and maintain chat quality.</p>
+                    </div>
+                    <div class="antibot-card">
+                        <h4><img src="assets/icons/checkmark.svg" alt="Checkmark icon" class="feature-icon">Nickname
+                            Blocking</h4>
+                        <p>Block predefined or custom nicknames often used by bots to infiltrate servers.</p>
+                    </div>
+                    <div class="antibot-card">
+                        <h4><img src="assets/icons/checkmark.svg" alt="Checkmark icon" class="feature-icon">Password
+                            Protection</h4>
+                        <p>Thwart unauthorized access by enforcing limits on password attempts.</p>
+                    </div>
+                    <div class="antibot-card">
+                        <h4><img src="assets/icons/checkmark.svg" alt="Checkmark icon" class="feature-icon">Rate
+                            Limiting</h4>
+                        <p>Control connections and pings per second to combat bot floods.</p>
+                    </div>
+                    <div class="antibot-card">
+                        <h4><img src="assets/icons/checkmark.svg" alt="Checkmark icon" class="feature-icon">Reconnect
+                            Control</h4>
+                        <p>Manage player reconnect attempts and duration to deter bots.</p>
+                    </div>
+                    <div class="antibot-card">
+                        <h4><img src="assets/icons/checkmark.svg" alt="Checkmark icon"
+                                class="feature-icon">Proxy/Anti-VPN Detection</h4>
+                        <p>Identify Proxy & VPN users and take action to safeguard the server.</p>
+                    </div>
+                    <div class="antibot-card">
+                        <h4><img src="assets/icons/checkmark.svg" alt="Checkmark icon"
+                                class="feature-icon">Customization</h4>
+                        <p>Tailor antibot settings to your server's needs for a personalized protection shield.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================== -->
+        <!--           BLOG           -->
+        <!-- ======================== -->
+        <section class="section" id="blog">
+            <div class="container">
+                <h2>Last blog posts</h2>
+                <p>FlameCord has a blog where we post updates, news and tutorials about FlameCord and Minecraft server
+                    management.</p>
+                <!-- src/html/index.html (in the #blog section) -->
+
+                <div class="blog-grid">
+                    <a href="/blog/reduce-memory.html" class="article-card">
+                        <img src="/blog/reduce-memory/thumbnail.jpg" alt="Article thumbnail">
+                        <div class="article-content">
+                            <h4>Reduce Memory Usage: FlameCord</h4>
+                            <p>FlameCord reduces your Minecraft server memory usage.</p>
+                        </div>
+                    </a>
+
+                    <a href="/blog/libdeflate-compression.html" class="article-card">
+                        <img src="/blog/libdeflate-compression/thumbnail.jpg" alt="Article thumbnail">
+                        <div class="article-content">
+                            <h4>Libdeflate Compression: Optimize Your Minecraft Server</h4>
+                            <p>FlameCord uses the best compression method out there, called LibDeflate, to compress and
+                                decompress packets with ultra speed.</p>
+                        </div>
+                    </a>
+
+                    <a href="/blog/best-anti-bot.html" class="article-card">
+                        <img src="/blog/best-anti-bot/thumbnail.jpg" alt="Article thumbnail">
+                        <div class="article-content">
+                            <h4>FlameCord is the Best Anti-Bot</h4>
+                            <p>FlameCord: The best anti-bot for Minecraft Servers</p>
+                        </div>
+                    </a>
+
+                    <a href="/blog/flamecord-vs-velocity.html" class="article-card">
+                        <img src="/blog/flamecord-vs-velocity/thumbnail.jpg" alt="Article thumbnail">
+                        <div class="article-content">
+                            <h4>FlameCord is better than Velocity</h4>
+                            <p>Explanation about why FlameCord is better than Velocity and why you should switch.</p>
+                        </div>
+                    </a>
+
+                    <a href="/blog/speedup-server.html" class="article-card">
+                        <img src="/blog/speedup-server/thumbnail.jpg" alt="Article thumbnail">
+                        <div class="article-content">
+                            <h4>FlameCord will speedup your Minecraft Server</h4>
+                            <p>Learn how FlameCord optimizes your Minecraft server performance.</p>
+                        </div>
+                    </a>
+                    <a href="/blog/how-to-install.html" class="article-card">
+                        <img src="/blog/how-to-install/thumbnail.jpg" alt="Article thumbnail">
+                        <div class="article-content">
+                            <h4>How to install FlameCord</h4>
+                            <p>A step-by-step guide on how to install FlameCord on your Minecraft server.</p>
+                        </div>
+                    </a>
+                </div>
+        </section>
+    </main>
+
+    <!-- ======================== -->
+    <!--          FOOTER          -->
+    <!-- ======================== -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                &copy; <span id="current-year">2025</span> FlameCord by <a href="https://github.com/arkflame/">ArkFlame
+                    Development</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- ======================== -->
+    <!--          SCRIPTS         -->
+    <!-- ======================== -->
+    <script src="/scripts/main.js" type="module"></script>
+
+</body>
+
+</html>

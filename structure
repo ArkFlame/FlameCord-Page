@@ -1,0 +1,45 @@
+/
+├── src/
+│   ├── assets/
+│   │   ├── images/
+│   │   │   ├── bg.webp
+│   │   │   ├── logo.png
+│   │   │   ├── banner.jpg
+│   │   │   ├── favicon.ico
+│   │   │   ├── features/
+│   │   │   │   ├── bot.png
+│   │   │   │   ├── firewall.png
+│   │   │   │   ├── feather.png
+│   │   │   │   ├── geyser.png
+│   │   │   │   ├── version.png
+│   │   │   │   └── community.png
+│   │   │   └── reviews/
+│   │   │       ├── user1.png
+│   │   │       └── user2.png
+│   │   └── icons/
+│   │       ├── discord.svg
+│   │       ├── twitter.svg
+│   │       └── ... (other social icons)
+│   │
+│   ├── html/
+│   │   └── index.html
+│   │
+│   ├── scripts/
+│   │   ├── main.js
+│   │   ├── modules/
+│   │   │   ├── navbar.js
+│   │   │   ├── typewriter.js
+│   │   │   ├── clipboard.js
+│   │   │   ├── autoScroller.js
+│   │   │   └── smoothScroll.js
+│   │   └── utils.js
+│   │
+│   └── styles/
+│       ├── main.css
+│       ├── _base.css
+│       ├── _variables.css
+│       ├── _layout.css
+│       ├── _components.css
+│       └── _responsive.css
+│
+└── package.json (Optional, for development tools)

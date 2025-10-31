@@ -1,0 +1,534 @@
+/* ======================== */
+/*          BUTTONS         */
+/* ======================== */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-speed) var(--transition-timing);
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background-color: var(--color-accent-primary);
+  color: white;
+  border-color: var(--color-accent-primary);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(229, 62, 62, 0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: var(--color-bg-primary);
+  border-color: white;
+  transform: translateY(-3px);
+}
+
+/* ======================== */
+/*      HERO COMPONENTS     */
+/* ======================== */
+#typewriter-cursor {
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ======================== */
+/*    DISCOUNT COMPONENTS   */
+/* ======================== */
+.discount-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: var(--color-bg-secondary);
+  padding: 10px 20px;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.discount-input {
+  background: none;
+  border: none;
+  color: var(--color-text-primary);
+  font-family: monospace;
+  font-size: 18px;
+  text-align: center;
+  width: 200px;
+}
+
+.discount-input:focus {
+  outline: none;
+}
+
+.copy-icon-btn {
+  font-size: 20px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color var(--transition-speed) var(--transition-timing);
+}
+
+.copy-icon-btn.copied {
+  color: var(--color-accent-success);
+}
+
+.scroll-down-btn {
+  font-size: 24px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: all var(--transition-speed) var(--transition-timing);
+}
+
+.scroll-down-btn:hover {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    transform: translateY(3px);
+}
+
+
+/* ======================== */
+/*      FEATURE CARD        */
+/* ======================== */
+.feature-card {
+  background-color: var(--color-bg-secondary);
+  padding: var(--spacing-gap);
+  border-radius: var(--border-radius-md);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid var(--color-border);
+}
+
+.feature-card .icon {
+  width: 64px;
+  height: 64px;
+  display: block;
+}
+
+.feature-card .title {
+  font-size: var(--font-size-card-title);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.feature-card .description {
+  color: var(--color-text-muted);
+}
+
+/* ======================== */
+/*        REVIEW CARD       */
+/* ======================== */
+.review-card {
+  background-color: var(--color-bg-secondary);
+  padding: var(--spacing-gap);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border);
+  width: 380px;
+  flex-shrink: 0; /* Prevents card from shrinking in flex container */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.review-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-author {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.review-stars {
+  color: #f0c419; /* Gold/yellow for stars */
+}
+
+.review-text {
+  color: var(--color-text-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ======================== */
+/*       ARTICLE CARD       */
+/* ======================== */
+.article-card {
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--border-radius-md);
+  overflow: hidden; /* This is important to contain the image */
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.article-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Prevents the image from stretching */
+  display: block;
+}
+
+.article-content {
+  padding: 25px;
+}
+
+.article-content h4 {
+  font-size: 18px;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  margin-bottom: 10px;
+}
+
+.article-content p {
+    font-size: 16px;
+    color: var(--color-text-muted);
+}
+
+/* --- Reviews Layout --- */
+.reviews-scroller {
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  
+  /* --- ADD THESE TWO LINES --- */
+  opacity: 0; /* Hide it by default */
+  transition: opacity 0.5s ease-in-out; /* Add a smooth fade-in effect */
+}
+
+/* --- ADD THIS NEW RULE --- */
+.reviews-scroller.ready {
+  opacity: 1; /* Make it visible when the 'ready' class is added */
+}
+
+
+.reviews-track {
+  display: flex;
+  gap: var(--spacing-gap);
+  width: max-content;
+}
+
+/* ======================== */
+/*     HEADER / NAVBAR      */
+/* ======================== */
+
+/* This is the main bar that sticks to the top */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0; /* Vertical padding */
+  z-index: 1000;   /* Ensures it's on top of all other content */
+  transition: all var(--transition-speed) var(--transition-timing);
+}
+
+/* This class is added by JavaScript when the user scrolls */
+.header.scrolled {
+  background-color: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px);
+  padding: 15px 0; /* Shrink padding slightly on scroll */
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* This is the flex container that aligns the 3 main parts */
+.navbar {
+  /* This is the key to the fix */
+  display: flex;
+  justify-content: space-between; /* Pushes logo and socials to the edges */
+  align-items: center; /* Vertically centers everything */
+}
+
+/* --- Logo Styling --- */
+.nav-logo img {
+  height: 35px; /* Control the logo size */
+  display: block; /* Removes extra space below the image */
+}
+
+/* --- Menu Links Styling (Center) --- */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-gap);
+  list-style: none; /* Removes bullet points */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  padding: 5px 0;
+  transition: color var(--transition-speed) var(--transition-timing);
+}
+
+.nav-menu a:hover {
+  color: var(--color-accent-primary);
+}
+
+/* --- Social Icons Styling (Right) --- */
+.nav-socials {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-gap-sm);
+  list-style: none;
+}
+
+.nav-socials a {
+  color: var(--color-text-muted);
+  font-size: 20px;
+  transition: color var(--transition-speed) var(--transition-timing);
+}
+
+.nav-socials a:hover {
+  color: var(--color-text-primary);
+}
+
+
+
+
+/* ======================== */
+/*     SECTION LAYOUTS      */
+/* ======================== */
+.section {
+  padding: var(--spacing-section-padding-y) 0;
+  margin-top: var(--spacing-section-vertical);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-header-to-content);
+}
+
+.section:first-child {
+  margin-top: 0;
+}
+
+
+/* --- THE FIX IS HERE --- */
+
+/* Specific styling for the hero section to be full-height */
+.hero-section {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: flex;             /* 1. This enables Flexbox */
+  justify-content: center;   /* 2. This centers the content horizontally */
+  align-items: center;       /* 3. THIS IS THE FIX: This centers the content vertically */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;        /* For the overlay */
+  text-align: center;        /* Fallback text alignment */
+}
+
+/* Dark overlay for better text readability */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(18, 18, 18, 1) 10%, rgba(18, 18, 18, 0));
+}
+
+/* This is the container for the H1, subtitle, and buttons */
+.hero-content {
+  position: relative; /* To be on top of the overlay */
+  z-index: 2;
+  display: flex;
+  flex-direction: column;   /* Stack items vertically */
+  align-items: center;      /* Center the stacked items horizontally */
+  gap: var(--spacing-gap);  /* THIS CREATES THE MARGINS between H1, subtitle, and buttons */
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-light);
+  letter-spacing: 5px;
+  color: var(--color-text-primary);
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: #F56565;
+}
+
+/* A new wrapper for the buttons to ensure they are aligned with a gap */
+.hero-buttons {
+    display: flex;
+    gap: var(--spacing-gap-sm);
+}
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Ensures text inside is centered */
+    gap: 15px;          /* Adds a nice space between the title and paragraph */
+}
+
+/* By using the ID, this rule becomes highly specific and difficult to override */
+#features .features-grid {
+    display: grid !important; /* Force the display property to be grid */
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-gap);
+    width: 100%;
+}
+
+/* Using the ID makes this rule highly specific and immune to script overrides */
+#antibot .antibot-grid {
+    display: grid !important; /* Force the display property to be grid */
+    grid-template-columns: repeat(2, 1fr); /* This creates the two-column layout */
+    gap: var(--spacing-gap);
+    width: 100%;
+    text-align: left; /* Ensures content within cards defaults to left-aligned */
+}
+
+/* --- Benchmark Layout (UPDATED) --- */
+#benchmark .benchmark-container {
+    display: flex;             /* Use Flexbox for alignment */
+    justify-content: center;   /* Center the charts horizontally */
+    flex-wrap: wrap;           /* Allow charts to stack on smaller screens */
+    gap: 50px;                 /* This creates the margin between the charts */
+    width: 100%;
+}
+
+.chart-wrapper {
+    background-color: var(--color-bg-secondary);
+    padding: 25px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+    /* Set a max-width to prevent charts from becoming too large on wide screens */
+    max-width: 500px;
+    width: 100%; /* Ensure it's responsive on mobile */
+}
+
+#discount-section {
+  margin-top: 20px; /* Drastically reduce the top margin from 80px to 20px */
+}
+
+#blog .blog-grid {
+    display: grid !important; /* Force the display property to be grid */
+    grid-template-columns: repeat(3, 1fr); /* This creates the three-column layout */
+    gap: var(--spacing-gap);
+    width: 100%;
+}
+
+.footer {
+  width: 100%; /* Ensure it spans the full width of the page */
+  
+  /* 1. Separation from Content */
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--spacing-section-vertical); /* Uses our standard big margin */
+  
+  /* 2. Internal Spacing */
+  padding: 50px 0; /* Generous padding on top and bottom for a clean look */
+  
+  /* 3. Alignment */
+  text-align: center;
+}
+
+/* Style for the copyright paragraph */
+.footer-text {
+  color: var(--color-text-muted); /* Use the muted color for less emphasis */
+  font-size: 16px;                /* Slightly smaller than body text */
+}
+
+/* Style for the link within the footer text */
+.footer-text a {
+  color: var(--color-text-primary); /* Make the link brighter than the surrounding text */
+  font-weight: var(--font-weight-medium);
+  text-decoration: none; /* Remove the default underline */
+  transition: color var(--transition-speed) var(--transition-timing);
+}
+
+/* A clean and professional hover effect for the link */
+.footer-text a:hover {
+  color: var(--color-accent-primary); /* Changes to your brand's red on hover */
+  text-decoration: underline;         /* Adds an underline on hover for clarity */
+}
+
+/* --- Social Icons Styling (Right) --- */
+.nav-socials {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-gap-sm);
+  list-style: none;
+}
+
+/* THIS IS THE NEW PART */
+.nav-socials a img {
+  height: 22px; /* Control the icon size */
+  width: auto;
+  display: block;
+  opacity: 0.7; /* Mute the icons slightly */
+  transition: opacity var(--transition-speed) var(--transition-timing);
+}
+
+.nav-socials a:hover img {
+  opacity: 1; /* Make them fully bright on hover */
+}
+
+.view-all-btn {
+    /* This adds a generous margin above the button,
+       separating it from the article grid. */
+    margin-top: 50px;
+}
+
+
+/* ======================== */
+/*   GENERIC PAGE HEADER    */
+/* ======================== */
+/* Use this for non-homepage sections to add top padding */
+.page-section {
+    padding-top: 150px; /* Pushes content down below the fixed navbar */
+    margin-top: 0;      /* Resets the default section margin */
+}
+
+#blog-page .blog-grid {
+    display: grid !important; /* Force the display property to be grid */
+    grid-template-columns: repeat(3, 1fr); /* This creates the three-column layout */
+    gap: var(--spacing-gap);
+    width: 100%;
+}
